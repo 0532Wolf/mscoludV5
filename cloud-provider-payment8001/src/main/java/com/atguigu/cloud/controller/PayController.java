@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -79,4 +80,22 @@ public class PayController
         }
         return ResultData.success(i);
     }
+
+    @Value("${server.port}")
+    private String port;
+
+    @GetMapping(value = "/pay/get/info")
+    private String getInfoByConsul(@Value("${atguigu.info}") String atguiguInfo)
+    {
+        /**
+         * 动态及时刷新处理方式
+         *  在main类 添加@RefreshScope 注解
+         *  默认更新阻塞更新是最晚55秒
+         *  ----------
+         *  重启consul  配置文件还在吗？ 不在，需要进行配置持久化
+         */
+
+        return "atguiguInfo: "+atguiguInfo+"\t"+"port: "+port;
+    }
+
 }

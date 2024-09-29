@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: cloud-consumer-order
+    ####Spring Cloud Consul for Service Discovery
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+      config:
+        profile-separator: '-' # default value is ","，we update '-'
+        format: YAML
+        #不建议生产使用，只是用于测试学习
+        watch:
+          wait-time: 2
+  # config/cloud-payment-service/data
+  #       /cloud-payment-service-dev/data
+  #       /cloud-payment-service-prod/data
+
