@@ -13,10 +13,10 @@ import tk.mybatis.spring.annotation.MapperScan;
 @MapperScan("com.atguigu.cloud.mapper") //import tk.mybatis.spring.annotation.MapperScan;
 @EnableDiscoveryClient
 @RefreshScope
-public class Main8001
+public class Main8002
 {
     public static void main(String[] args)
     {
-        SpringApplication.run(Main8001.class,args);
+        SpringApplication.run(Main8002.class,args);
     }
 }
