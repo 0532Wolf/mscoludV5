@@ -8,6 +8,12 @@
     <artifactId>mscloudV5</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <modules>
+        <module>mybatis_generator2024</module>
+        <module>cloud-provider-payment8001</module>
+        <module>cloud-consumer-order80</module>
+        <module>cloud-api-commons</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
