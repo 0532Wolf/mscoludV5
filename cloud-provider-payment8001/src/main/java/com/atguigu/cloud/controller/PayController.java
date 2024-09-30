@@ -8,9 +8,12 @@ import com.atguigu.cloud.service.PayService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * @auther zzyy
@@ -55,6 +58,12 @@ public class PayController
     public ResultData<Pay> getById(@PathVariable("id") Integer id)
     {
         if(id < 0) throw new RuntimeException("id不能为负数");
+        try {
+            TimeUnit.SECONDS.sleep(62);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         Pay pay = payService.getById(id);
         return ResultData.success(pay);
     }
@@ -94,7 +103,6 @@ public class PayController
          *  ----------
          *  重启consul  配置文件还在吗？ 不在，需要进行配置持久化
          */
-
         return "atguiguInfo: "+atguiguInfo+"\t"+"port: "+port;
     }
 

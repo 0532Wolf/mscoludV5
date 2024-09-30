@@ -84,6 +84,20 @@ public class Pay {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "Pay{" +
+                "id=" + id +
+                ", payNo='" + payNo + '\'' +
+                ", orderNo='" + orderNo + '\'' +
+                ", userId=" + userId +
+                ", amount=" + amount +
+                ", deleted=" + deleted +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
+    }
+
     /**
      * 获取支付流水号
      *

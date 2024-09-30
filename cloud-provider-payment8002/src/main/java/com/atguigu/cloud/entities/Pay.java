@@ -209,4 +209,18 @@ public class Pay {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+
+    @Override
+    public String toString() {
+        return "Pay{" +
+                "id=" + id +
+                ", payNo='" + payNo + '\'' +
+                ", orderNo='" + orderNo + '\'' +
+                ", userId=" + userId +
+                ", amount=" + amount +
+                ", deleted=" + deleted +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
+    }
 }

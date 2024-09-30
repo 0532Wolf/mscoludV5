@@ -1,0 +1,39 @@
+server:
+  port: 80
+
+spring:
+  cloud:
+    openfeign:
+      client:
+        config:
+          #          default:
+          #            #连接超时时间
+          #            connect-timeout: 3000
+          #            #读取超时时间
+          #            read-timeout: 3000
+          #针对某个微服务进行配置
+          cloud-payment-service:
+            #连接超时时间
+            connect-timeout: 2000
+            #读取超时时间
+            read-timeout: 2000
+      httpclient:
+        hc5:
+          enabled: true
+      #压缩配置
+      compression:
+        request:
+          enabled: false
+          min-request-size: 2048 #最小触发压缩的大小
+          mime-types: text/xml,application/xml,application/json #触发压缩数据类型
+        response:
+          enabled: true
+
+# feign日志以什么级别监控哪个接口
+logging:
+  level:
+    com:
+      atguigu:
+        cloud:
+          apis:
+            PayFeignApi: debug

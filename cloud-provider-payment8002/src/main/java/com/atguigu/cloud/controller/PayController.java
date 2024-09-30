@@ -8,6 +8,7 @@ import com.atguigu.cloud.service.PayService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
  * @auther zzyy
  * @create 2023-11-12 22:34
  */
+@Slf4j
 @RestController
 @Tag(name = "支付微服务模块",description = "支付CRUD")
 public class PayController
@@ -94,7 +96,7 @@ public class PayController
          *  ----------
          *  重启consul  配置文件还在吗？ 不在，需要进行配置持久化
          */
-
+        log.info("atguiguInfo: "+atguiguInfo+"\t"+"port: "+port);
         return "atguiguInfo: "+atguiguInfo+"\t"+"port: "+port;
     }
 

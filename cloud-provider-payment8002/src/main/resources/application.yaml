@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8002
 
 # ==========applicationName + druid-mysql8 driver===================
 spring:
@@ -8,7 +8,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/db2024?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
     username: root
-    password: toor
+    password: root
   profiles:
     active: dev # 多环境配置加载内容dev/prod,不写就是默认default配置
 
