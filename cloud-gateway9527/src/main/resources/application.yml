@@ -1,0 +1,13 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway #???????consul?nacos?????
+  cloud:
+    consul: #??consul??
+      host: localhost
+      port: 8500
+      discovery:
+        prefer-ip-address: true
+        service-name: ${spring.application.name}
