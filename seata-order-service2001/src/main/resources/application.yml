@@ -1,0 +1,22 @@
+seata:
+  registry: # seata????
+    type: nacos # seata????
+    nacos:
+      application: seata-server #seata????
+      server-addr: 127.0.0.1:8848
+      namespace: ""
+      group: SEATA_GROUP
+      cluster: default
+  config:             # seata????
+    nacos:
+      server-addr: 127.0.0.1:8848
+      namespace: ""
+      group: SEATA_GROUP
+      username: nacos
+      password: nacos
+  tx-service-group: default_tx_group # ????????TC???????
+  service:
+    vgroup-mapping:
+      default_tx_group: default # ???????????
+  data-source-proxy-mode: AT
+  application-id: seata-server
